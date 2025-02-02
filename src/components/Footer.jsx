@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold transition-colors duration-500 hover:text-blue-400 text-left">
             <span className="text-white">Grow</span>
-            <span className="text-blue-500"> N Work</span>
+            <span className="text-blue-500"> -N- Spark</span>
           </h1>
         </div>
 

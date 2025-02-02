@@ -14,102 +14,46 @@ const Home = () => {
 
   return (
     <div>
-      <div className="relative overflow-hidden py-24 lg:py-36 mb-12">
+      <div className="relative overflow-hidden h-[130vh] sm:h-[110vh] lg:h-[95vh] py-28 sm:py-32 lg:py-36 mb-12">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-radial from-black via-transparent to-transparent opacity-50"></div>
         <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center px-8 relative z-10">
           <div className="text-center lg:text-left lg:w-1/2 p-6">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-6">
               Ready to Master{" "}
               <span className="relative text-yellow-500 underline">
                 {textVariants[activeText]}
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-300 animate-pulse"></span>
               </span>{" "}
               with <span className="text-blue-500">Grow</span>{" "}
-              <span className="text-blue-500">N</span>{" "}
-              <span className="text-white">Work</span>
+              <span className="text-blue-500">-N-</span>{" "}
+              <span className="text-white">Spark</span>
             </h1>
-            <p className="text-lg text-gray-300 mb-8">
+            <p className="text-lg text-gray-300 mb-6 block">
               Let us guide you through the world of data analytics with
               expert-led courses and real-world applications.
             </p>
-            <Link
-              to="courses" 
-              smooth={true} 
-              duration={500} 
-              className="bg-white text-black px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 cursor-pointer"
-              aria-label="Explore Courses"
-            >
-              Explore Courses
-            </Link>
+            <div className="flex justify-center lg:justify-start">
+              <Link
+                to="courses"
+                smooth={true}
+                duration={500}
+                className="bg-white text-black px-8 py-4 text-lg rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 cursor-pointer"
+                aria-label="Explore Courses"
+              >
+                Explore Courses
+              </Link>
+            </div>
           </div>
           <div className="lg:w-1/2 flex justify-center p-6">
             <img
-              src="https://images.pexels.com/photos/3184356/pexels-photo-3184356.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://images.pexels.com/photos/3184356/pexels-photo-3184356.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=700"
               alt="Professional Learning"
-              className="w-3/4 lg:w-full max-w-md rounded-lg shadow-lg"
+              className="w-4/5 lg:w-full max-w-lg rounded-lg shadow-lg"
             />
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-8 mb-12">
-  <h2 className="text-3xl font-bold text-center mb-12">
-    Explore Our Technologies
-  </h2>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div className="relative rounded-lg shadow-lg overflow-hidden mb-16 lg:mb-0 transform transition duration-300 hover:scale-105">
-      <div className="relative p-6 z-10">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Power BI</h3>
-        <p className="text-gray-800 mb-6">
-          Power BI is a business analytics tool that enables you to
-          visualize data and share insights across your organization or
-          embed them in an app or website.
-        </p>
-        <p className="text-gray-800 font-bold">Key Plugins:</p>
-        <ul className="text-gray-800 list-disc pl-4">
-          <li>Power BI Desktop</li>
-          <li>Power BI Service</li>
-          <li>Power BI Mobile</li>
-        </ul>
-      </div>
-    </div>
-
-    <div className="relative rounded-lg shadow-lg overflow-hidden mb-16 lg:mb-0 transform transition duration-300 hover:scale-105">
-      <div className="relative p-6 z-10">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Data Analytics</h3>
-        <p className="text-gray-800 mb-6">
-          Data analytics refers to the process of examining data sets in
-          order to draw conclusions about the information they contain,
-          increasingly with the aid of specialized systems and software.
-        </p>
-        <p className="text-gray-800 font-bold">Key Plugins:</p>
-        <ul className="text-gray-800 list-disc pl-4">
-          <li>Tableau</li>
-          <li>Google Analytics</li>
-          <li>SQL</li>
-        </ul>
-      </div>
-    </div>
-
-    <div className="relative rounded-lg shadow-lg overflow-hidden mb-16 lg:mb-0 transform transition duration-300 hover:scale-105">
-      <div className="relative p-6 z-10">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Data Storage</h3>
-        <p className="text-gray-800 mb-6">
-          Data storage refers to the process of saving data in digital
-          form on a storage medium. This data can be accessed, managed,
-          and retrieved for further use.
-        </p>
-        <p className="text-gray-800 font-bold">Key Plugins:</p>
-        <ul className="text-gray-800 list-disc pl-4">
-          <li>Amazon S3</li>
-          <li>Google Cloud Storage</li>
-          <li>Azure Blob Storage</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
     </div>
   );
 };

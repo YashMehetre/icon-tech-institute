@@ -5,6 +5,7 @@ import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
 import PopupForm from "./components/PopupForm";
+import ScrollToTop from "./components/ScrollToTop"; // Import the new component
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <section id="about"><About /></section>
       <section id="contact"><Contact /></section>
       <PopupForm />
+      <ScrollToTop />
       <Footer />
     </div>
   );

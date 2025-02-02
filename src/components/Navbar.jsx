@@ -20,8 +20,8 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <a href="/" className="text-3xl font-extrabold" aria-label="Grow N Work">
               <span className="text-black">Grow</span>{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">N</span>{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">Work</span>
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">-N-</span>{" "}
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">Spark</span>
             </a>
           </div>
 
