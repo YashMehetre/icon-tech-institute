@@ -8,6 +8,7 @@ import Blog from "./pages/Blog";
 import Footer from "./components/Footer";
 import PopupForm from "./components/PopupForm";
 import ScrollToTop from "./components/ScrollToTop"; 
+import CourseDetails from "./pages/CourseDetails"; 
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           } 
         />
         <Route path="/blog" element={<Blog />} /> 
+        <Route path="/course/:id" element={<CourseDetails />} /> 
       </Routes>
       
       <Footer /> 

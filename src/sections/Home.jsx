@@ -25,9 +25,9 @@ const Home = () => {
                 {textVariants[activeText]}
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-300 animate-pulse"></span>
               </span>{" "}
-              with <span className="text-blue-500">Grow</span>{" "}
-              <span className="text-blue-500">-N-</span>{" "}
-              <span className="text-white">Spark</span>
+              with <span className="text-blue-500">Data</span>{" "}
+              <span className="text-blue-500">Mentor</span>{" "}
+            
             </h1>
             <p className="text-lg text-gray-300 mb-6 block">
               Let us guide you through the world of data analytics with
