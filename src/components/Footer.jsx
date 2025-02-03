@@ -4,7 +4,6 @@ import {
   FaTwitter,
   FaLinkedinIn,
   FaInstagram,
-  FaPinterest,
   FaYoutube,
 } from "react-icons/fa";
 
@@ -14,39 +13,38 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold transition-colors duration-500 hover:text-blue-400 text-left">
-            <span className="text-white">Grow</span>
-            <span className="text-blue-500"> -N- Spark</span>
+            <span className="text-white">Data</span>
+            <span className="text-blue-500"> Mentor</span>
           </h1>
         </div>
 
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
-            <h3 className="text-lg font-semibold mb-4">Categories</h3>
+            <h3 className="text-lg font-semibold mb-4">Course Domains</h3>
             <ul className="space-y-2">
-              <li>Cybersecurity Courses</li>
-              <li>Data Science Courses</li>
-              <li>Programming Courses</li>
-              <li>Networking & Cloud Computing Courses</li>
-              <li>Digital Marketing Courses</li>
-              <li>Global Certifications</li>
+              <li><a href="#data-analytics">Data Analytics</a></li>
+              <li><a href="#power-bi">Microsoft Power BI</a></li>
+              <li><a href="#google-cloud">Google Cloud Platform</a></li>
+              <li><a href="#power-platform">Microsoft Power Platform</a></li>
+              <li><a href="#python">Python</a></li>
             </ul>
           </div>
+
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/blogs">Blogs</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
-             
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#courses">Courses</a></li>
+              <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
 
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">Reach Us</h3>
-            <p>Puen</p>
-            <p>ABC</p>
-            <p>Salt Lake Sector 5, Kolkata 700091</p>
+            <p>Infront Of Agrawal Hospital</p>
+            <p>Chandan Nagar </p>
+            <p>Pune</p>
 
             <h3 className="text-lg font-semibold mt-4 mb-2">Social Handles</h3>
             <div className="flex space-x-4">
@@ -83,14 +81,6 @@ const Footer = () => {
                 <FaTwitter size={24} />
               </a>
               <a
-                href="https://pinterest.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
-              >
-                <FaPinterest size={24} />
-              </a>
-              <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -104,20 +94,7 @@ const Footer = () => {
 
         <div className="mt-8 border-t border-gray-700 pt-4 text-center">
           <p className="text-sm">
-            ©{new Date().getFullYear()} Get N Work Academy All Rights Reserved
-          </p>
-          <p className="text-sm mt-2">
-            <Link to="/privacy-policy" className="hover:text-gray-300">
-              Privacy Policy
-            </Link>{" "}
-            |{" "}
-            <Link to="/terms" className="hover:text-gray-300">
-              Terms & Conditions
-            </Link>{" "}
-            |{" "}
-            <Link to="/refund-policy" className="hover:text-gray-300">
-              Cancellation / Refund Policies
-            </Link>
+            ©{new Date().getFullYear()} Data Mentor Academy All Rights Reserved
           </p>
         </div>
       </div>

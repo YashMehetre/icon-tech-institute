@@ -50,7 +50,7 @@ const Courses = () => {
                     >
                       Explore More
                     </Link>
-                    <span className="text-red-500 text-2xl">➜</span>
+                   
                   </div>
                 </div>
               ))}

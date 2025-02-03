@@ -1,3 +1,4 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
@@ -8,13 +9,13 @@ import Blog from "./pages/Blog";
 import Footer from "./components/Footer";
 import PopupForm from "./components/PopupForm";
 import ScrollToTop from "./components/ScrollToTop"; 
-import CourseDetails from "./pages/CourseDetails"; 
+import CourseDetails from "./pages/CourseDetails";
+import PhoneCallButton from "./components/PhoneCallButton"; 
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      
       <Routes>
         <Route 
           path="/" 
@@ -32,8 +33,8 @@ const App = () => {
         <Route path="/blog" element={<Blog />} /> 
         <Route path="/course/:id" element={<CourseDetails />} /> 
       </Routes>
-      
       <Footer /> 
+      <PhoneCallButton />  
     </div>
   );
 };
