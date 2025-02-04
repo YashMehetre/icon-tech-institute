@@ -40,7 +40,7 @@ const PopupForm = () => {
     setIsSending(true);
     setError("");
     setMessageSent(false);
-    setSuccessMessage(""); 
+    setSuccessMessage("");
 
     const templateParams = {
       name: formData.name,
@@ -51,8 +51,8 @@ const PopupForm = () => {
 
     emailjs
       .send(
-        "service_z0ygob6", 
-        "template_4ja3k0y", 
+        "service_z0ygob6",
+        "template_4ja3k0y",
         templateParams,
         "rksfd0TNUUD9ourEs"
       )
@@ -73,22 +73,21 @@ const PopupForm = () => {
   if (!showPopup) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
       <div
-        className={`bg-white p-8 rounded-lg shadow-xl w-[900px] relative flex transform transition-all duration-500 ${
+        className={`bg-white p-6 rounded-lg shadow-xl w-full max-w-4xl relative flex flex-col md:flex-row transform transition-all duration-500 ${
           slideIn ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="w-1/2 mr-6">
+        <div className="w-full md:w-1/2 mb-4 md:mb-0 md:mr-6">
           <img
-            src={enquiryImage} 
+            src={enquiryImage}
             alt="Enquiry"
-            className="rounded-lg shadow-lg w-full h-full object-cover"
+            className="rounded-lg shadow-lg w-full h-56 md:h-full object-cover"
           />
         </div>
 
-        <div className="w-1/2 relative">
-          {/* Close Button */}
+        <div className="w-full md:w-1/2 relative">
           <button
             onClick={() => setShowPopup(false)}
             className="absolute top-2 right-2 text-gray-800 hover:text-gray-900 text-3xl"
@@ -96,22 +95,22 @@ const PopupForm = () => {
             &times;
           </button>
 
-          <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
+          <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
             Enquiry Form
           </h2>
 
-          <p className="text-lg mb-6 text-center text-gray-600">
+          <p className="text-lg mb-4 text-center text-gray-600">
             Have a question or need more information? Reach out to us!
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               placeholder="Your Name"
-              className="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:border-blue-400"
+              className="w-full p-3 border rounded-lg focus:outline-none focus:border-blue-400"
               required
             />
             <input
@@ -120,7 +119,7 @@ const PopupForm = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Your Email"
-              className="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:border-blue-400"
+              className="w-full p-3 border rounded-lg focus:outline-none focus:border-blue-400"
               required
             />
             <input
@@ -129,7 +128,7 @@ const PopupForm = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Your Phone Number"
-              className="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:border-blue-400"
+              className="w-full p-3 border rounded-lg focus:outline-none focus:border-blue-400"
               required
             />
             <textarea
@@ -137,7 +136,7 @@ const PopupForm = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Your Enquiry"
-              className="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:border-blue-400"
+              className="w-full p-3 border rounded-lg focus:outline-none focus:border-blue-400"
               rows="4"
               required
             ></textarea>
