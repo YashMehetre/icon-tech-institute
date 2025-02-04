@@ -12,13 +12,13 @@ const Footer = () => {
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold transition-colors duration-500 hover:text-blue-400 text-left">
+          <h1 className="text-4xl font-bold transition-colors duration-500 hover:text-blue-400 text-left ml-4">
             <span className="text-white">Data</span>
             <span className="text-blue-500"> Mentor</span>
           </h1>
         </div>
 
-        <div className="flex flex-wrap justify-between">
+        <div className="flex flex-wrap justify-between ml-4">
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">Course Domains</h3>
             <ul className="space-y-2">

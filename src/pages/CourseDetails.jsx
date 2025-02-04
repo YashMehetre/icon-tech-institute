@@ -1,14 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import coursesData from "../pages/coursesData";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+
+const faqData = [
+  {
+    question: "What is the duration of the courses?",
+    answer: "The duration varies depending on the course, ranging from 4 weeks to 3 months.",
+  },
+  {
+    question: "Do I get a certificate after completion?",
+    answer: "Yes, a certificate of completion is provided for all successfully completed courses.",
+  },
+  {
+    question: "Is there placement assistance available?",
+    answer: "Yes, we provide placement support and mock interview sessions.",
+  },
+  {
+    question: "What are the payment options available?",
+    answer: "We accept payments through net banking, credit cards, and UPI transactions.",
+  },
+];
 
 const CourseDetails = () => {
   const { id } = useParams();
   const course = coursesData.find((course) => course.id === parseInt(id));
+  const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleToggle = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
 
   if (!course) {
     return <p className="text-center text-gray-700 text-xl mt-10">Course not found.</p>;
@@ -73,6 +98,35 @@ const CourseDetails = () => {
               <div key={index} className="flex items-center bg-gray-100 p-4 rounded-lg">
                 <span className="text-blue-600 font-semibold mr-4">{index + 1}.</span>
                 <p className="text-gray-700">{topic}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12 bg-white p-8 rounded-lg shadow-lg">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {faqData.map((faq, index) => (
+              <div key={index} className="border-b-2 border-gray-200 pb-4">
+                <button
+                  onClick={() => handleToggle(index)}
+                  className="w-full flex justify-between items-center text-left group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600">
+                    {faq.question}
+                  </h3>
+                  <span className="text-blue-500 text-xl">
+                    {activeIndex === index ? <FiChevronUp /> : <FiChevronDown />}
+                  </span>
+                </button>
+                {activeIndex === index && (
+                  <p className="text-gray-700 mt-3 pl-4 border-l-4 border-blue-400">
+                    {faq.answer}
+                  </p>
+                )}
               </div>
             ))}
           </div>
