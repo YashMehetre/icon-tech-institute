@@ -98,8 +98,8 @@ const Navbar = () => {
                     to="home"
                     smooth={true}
                     duration={500}
-                    spy={true} // This will track the scroll position and update the active link
-                    offset={-80} // Adjust this value based on the height of your navbar
+                    spy={true} 
+                    offset={-80} 
                     className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "home" ? "text-blue-500 font-bold" : ""}`}
                     onClick={() => handleSetActive("home")}
                     aria-label="Go to Home section"
