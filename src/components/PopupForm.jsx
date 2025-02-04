@@ -79,7 +79,8 @@ const PopupForm = () => {
           slideIn ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="w-full md:w-1/2 mb-4 md:mb-0 md:mr-6">
+        {/* Image Section */}
+        <div className="w-full md:w-1/2 mb-4 md:mb-0 md:mr-6 hidden md:block">
           <img
             src={enquiryImage}
             alt="Enquiry"
@@ -87,6 +88,7 @@ const PopupForm = () => {
           />
         </div>
 
+        {/* Form Section */}
         <div className="w-full md:w-1/2 relative">
           <button
             onClick={() => setShowPopup(false)}

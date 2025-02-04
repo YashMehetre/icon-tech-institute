@@ -12,6 +12,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import CourseDetails from "./pages/CourseDetails";
 import PhoneCallButton from "./components/PhoneCallButton"; 
 import WhatsAppButton from "./components/WhatsAppButton";
+import BlogCardSlider from "./sections/BlogCardSlider";
 const App = () => {
   return (
     <div>
@@ -24,13 +25,14 @@ const App = () => {
               <section id="home"><Home /></section>
               <section id="courses"><Courses /></section>
               <section id="about"><About /></section>
+              <BlogCardSlider/>
               <section id="contact"><Contact /></section>
               <PopupForm />
               <ScrollToTop />
             </>
           } 
         />
-        <Route path="/blog" element={<Blog />} /> 
+         <Route path="/blog/:id" element={<Blog />} /> 
         <Route path="/course/:id" element={<CourseDetails />} /> 
       </Routes>
       <Footer /> 
