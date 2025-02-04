@@ -11,7 +11,7 @@ import PopupForm from "./components/PopupForm";
 import ScrollToTop from "./components/ScrollToTop"; 
 import CourseDetails from "./pages/CourseDetails";
 import PhoneCallButton from "./components/PhoneCallButton"; 
-
+import WhatsAppButton from "./components/WhatsAppButton";
 const App = () => {
   return (
     <div>
@@ -35,6 +35,7 @@ const App = () => {
       </Routes>
       <Footer /> 
       <PhoneCallButton />  
+      <WhatsAppButton />
     </div>
   );
 };

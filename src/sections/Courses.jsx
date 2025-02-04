@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
-import courses from "../pages/coursesData"; 
+import { Link } from "react-router-dom";
+import courses from "../pages/coursesData";
 
 const Courses = () => {
   const categories = ["Our Courses", "Trending Courses", "High in Demand Training"];
 
   return (
     <div className="bg-black min-h-screen py-16 px-6">
-      {categories.map((category) => (
-        <div key={category}>
+      {categories.map((category, index) => (
+        <div key={category} className={index !== 0 ? "mt-12" : ""}> {/* Added margin-top except for the first category */}
           <h2 className="text-4xl font-bold text-center mb-6 text-white">
             {category}
           </h2>
@@ -50,7 +50,6 @@ const Courses = () => {
                     >
                       Explore More
                     </Link>
-                   
                   </div>
                 </div>
               ))}
