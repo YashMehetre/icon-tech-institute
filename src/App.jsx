@@ -13,6 +13,7 @@ import CourseDetails from "./pages/CourseDetails";
 import PhoneCallButton from "./components/PhoneCallButton"; 
 import WhatsAppButton from "./components/WhatsAppButton";
 import BlogCardSlider from "./sections/BlogCardSlider";
+import BlogDetails from "./pages/BlogDetails";
 const App = () => {
   return (
     <div>
@@ -34,6 +35,7 @@ const App = () => {
         />
          <Route path="/blog/:id" element={<Blog />} /> 
         <Route path="/course/:id" element={<CourseDetails />} /> 
+        <Route path="/blogdetails" element={<BlogDetails />} /> 
       </Routes>
       <Footer /> 
       <PhoneCallButton />  

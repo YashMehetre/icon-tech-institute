@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { blogCards } from '../pages/blogdata'; 
+import { blogCards } from '../pages/blogdata';
 
 function Blog() {
   const { id } = useParams(); 
   const blog = blogCards.find((b) => b.title === id); 
+
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
 
   if (!blog) {
     return <div>Blog not found!</div>;
@@ -12,7 +16,7 @@ function Blog() {
 
   return (
     <div className="container mx-auto py-16 px-6">
-      {/* Main Blog Content */}
+      
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-12 mt-10">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2">

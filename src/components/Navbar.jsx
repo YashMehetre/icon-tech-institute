@@ -27,13 +27,13 @@ const Navbar = () => {
     } else if (location.pathname === "/courses") {
       setActiveLink("courses");
     } else if (location.pathname.includes("/course/")) {
-      setActiveLink("courses"); 
+      setActiveLink("courses");
     }
   }, [location.pathname]);
 
+  const isBlogDetailPage = location.pathname === "/blogdetails";
   const isHomePage = location.pathname === "/";
   const isCoursePage = location.pathname.includes("/course/");
-  const isBlogPage = location.pathname === "/blog"; 
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md py-4 z-50">
@@ -84,7 +84,7 @@ const Navbar = () => {
           >
             <ul className="flex flex-col md:flex-row items-start md:items-center justify-center md:justify-center space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
               <li>
-                {isCoursePage || isBlogPage || location.pathname.includes("/course/") ? (
+                {isBlogDetailPage ? (
                   <RouterLink
                     to="/"
                     className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "home" ? "text-blue-500 font-bold" : ""}`}
@@ -94,72 +94,68 @@ const Navbar = () => {
                     Home
                   </RouterLink>
                 ) : (
-                  <Link
-                    to="home"
-                    smooth={true}
-                    duration={500}
-                    spy={true} 
-                    offset={-80} 
+                  
+                  <RouterLink
+                    to="/"
                     className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "home" ? "text-blue-500 font-bold" : ""}`}
                     onClick={() => handleSetActive("home")}
-                    aria-label="Go to Home section"
+                    aria-label="Go to Home page"
                   >
                     Home
-                  </Link>
+                  </RouterLink>
                 )}
               </li>
-              {!isBlogPage && !isCoursePage && (
-                <li>
-                  <Link
-                    to="courses"
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    offset={-80}
-                    className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "courses" ? "text-blue-500 font-bold" : ""}`}
-                    onClick={() => handleSetActive("courses")}
-                    aria-label="Go to Courses section"
-                  >
-                    Courses
-                  </Link>
-                </li>
+              {!isBlogDetailPage && !isCoursePage && (
+                <>
+                  <li>
+                    <Link
+                      to="courses"
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      offset={-80}
+                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "courses" ? "text-blue-500 font-bold" : ""}`}
+                      onClick={() => handleSetActive("courses")}
+                      aria-label="Go to Courses section"
+                    >
+                      Courses
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="about"
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      offset={-80}
+                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "about" ? "text-blue-500 font-bold" : ""}`}
+                      onClick={() => handleSetActive("about")}
+                      aria-label="Go to About Us section"
+                    >
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="contact"
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      offset={-80}
+                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "contact" ? "text-blue-500 font-bold" : ""}`}
+                      onClick={() => handleSetActive("contact")}
+                      aria-label="Go to Contact Us section"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                </>
               )}
 
-              {!isBlogPage && !isCoursePage && (
-                <li>
-                  <Link
-                    to="about"
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    offset={-80}
-                    className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "about" ? "text-blue-500 font-bold" : ""}`}
-                    onClick={() => handleSetActive("about")}
-                    aria-label="Go to About Us section"
-                  >
-                    About Us
-                  </Link>
-                </li>
-              )}
-              {!isBlogPage && !isCoursePage && (
-                <li>
-                  <Link
-                    to="contact"
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    offset={-80}
-                    className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "contact" ? "text-blue-500 font-bold" : ""}`}
-                    onClick={() => handleSetActive("contact")}
-                    aria-label="Go to Contact Us section"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-              )}
+            
               <li>
                 <RouterLink
-                  to="/blog"
+                  to="/blogdetails"
                   className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "blog" ? "text-blue-500 font-bold" : ""}`}
                   onClick={() => handleSetActive("blog")}
                   aria-label="Go to Blog page"
