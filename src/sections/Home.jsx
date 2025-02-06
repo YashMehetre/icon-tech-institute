@@ -14,7 +14,8 @@ const Home = () => {
 
   return (
     <div>
-      <div className="relative overflow-hidden h-[130vh] sm:h-[110vh] lg:h-[95vh] py-28 sm:py-32 lg:py-36 mb-12">
+      {/* Adjusted height and padding for mobile view */}
+      <div className="relative overflow-hidden h-[90vh] sm:h-[110vh] lg:h-[95vh] pt-24 sm:py-32 lg:py-36 mb-6 sm:mb-12">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-radial from-black via-transparent to-transparent opacity-50"></div>
         <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center px-8 relative z-10">
@@ -27,7 +28,6 @@ const Home = () => {
               </span>{" "}
               with <span className="text-blue-500">Icon</span>{" "}
               <span className="text-blue-500">Tech</span>{" "}
-            
             </h1>
             <p className="text-lg text-gray-300 mb-6 block">
               Let us guide you through the world of data analytics with

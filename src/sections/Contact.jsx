@@ -14,6 +14,7 @@ const Contact = () => {
   const [messageSent, setMessageSent] = useState(false);
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
   const validateForm = () => {
     const { firstName, lastName, email, message } = formData;
     if (!firstName || !lastName || !email || !message) {
@@ -44,12 +45,12 @@ const Contact = () => {
     e.preventDefault();
 
     if (!validateForm()) {
-      return; 
+      return;
     }
 
     setIsSending(true);
     setMessageSent(false);
-    setSuccessMessage("");  
+    setSuccessMessage("");
 
     const templateParams = {
       first_name: formData.firstName,
@@ -61,10 +62,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_z0ygob6", 
-        "template_l3spsn3", 
+        "service_z0ygob6",
+        "template_l3spsn3",
         templateParams,
-        "rksfd0TNUUD9ourEs" 
+        "rksfd0TNUUD9ourEs"
       )
       .then(
         (response) => {
@@ -88,9 +89,8 @@ const Contact = () => {
 
   return (
     <div className="bg-gray-100 py-16 px-6 overflow-hidden">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        
-        <div className="md:ml-16"> {/* Left content stays in place */}
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="lg:ml-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Contact Us</h2>
           <p className="text-gray-700 mb-6">
             Email, call, or complete the form to learn how Snappy can solve your messaging problem.
@@ -98,27 +98,22 @@ const Contact = () => {
           <p className="text-gray-800 font-semibold">info@snappy.io</p>
           <p className="text-gray-800 font-semibold mb-6">321-221-231</p>
           <a href="#" className="text-blue-600 font-semibold">Customer Support</a>
-
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer">
               <h3 className="text-lg font-semibold text-gray-900">Customer Support</h3>
               <p className="text-gray-700 mt-2">Our support team is available around the clock to address any concerns or queries you may have.</p>
             </div>
-
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer">
               <h3 className="text-lg font-semibold text-gray-900">Feedback & Suggestions</h3>
               <p className="text-gray-700 mt-2">We value your feedback and are continuously working to improve Snappy.</p>
             </div>
-
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer">
               <h3 className="text-lg font-semibold text-gray-900">Media Inquiries</h3>
               <p className="text-gray-700 mt-2">For media-related questions or press inquiries, contact us at media@snappyapp.com.</p>
             </div>
           </div>
         </div>
-
-        {/* Form Section - Pushed more to the right */}
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full mt-12 md:mt-0 md:ml-24">
+        <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full mt-12 lg:mt-0 lg:ml-24">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

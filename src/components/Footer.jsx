@@ -21,11 +21,11 @@ const Footer = () => {
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">Course Domains</h3>
             <ul className="space-y-2">
-              <li><a href="#data-analytics">Data Analytics</a></li>
-              <li><a href="#power-bi">Microsoft Power BI</a></li>
-              <li><a href="#google-cloud">Google Cloud Platform</a></li>
-              <li><a href="#power-platform">Microsoft Power Platform</a></li>
-              <li><a href="#python">Python</a></li>
+              <li>Data Analytics</li>
+              <li>Microsoft Power BI</li>
+              <li>Google Cloud Platform</li>
+              <li>Microsoft Power Platform</li>
+              <li>Python</li>
             </ul>
           </div>
 

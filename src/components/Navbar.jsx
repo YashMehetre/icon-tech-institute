@@ -1,4 +1,4 @@
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 import { useState, useEffect } from "react";
 
@@ -6,33 +6,29 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleSetActive = (link) => {
+  const handleNavigation = (link, isSection) => {
     setActiveLink(link);
+    if (isSection && location.pathname === "/") {
+      return;
+    }
+    navigate("/", { replace: true });
   };
 
-  useEffect(() => {
+  const handleHomeClick = () => {
     if (location.pathname === "/") {
-      setActiveLink("home");
-    } else if (location.pathname === "/blog") {
-      setActiveLink("blog");
-    } else if (location.pathname === "/contact") {
-      setActiveLink("contact");
-    } else if (location.pathname === "/about") {
-      setActiveLink("about");
-    } else if (location.pathname === "/courses") {
-      setActiveLink("courses");
-    } else if (location.pathname.includes("/course/")) {
-      setActiveLink("courses");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
     }
-  }, [location.pathname]);
+  };
 
   const isBlogDetailPage = /^\/blog\//.test(location.pathname) || location.pathname === "/blogdetails";
-  const isHomePage = location.pathname === "/";
   const isCoursePage = location.pathname.includes("/course/");
 
   return (
@@ -40,12 +36,12 @@ const Navbar = () => {
       <nav className="container mx-auto px-4" aria-label="Main navigation" role="navigation">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <a href="/" className="text-3xl font-extrabold" aria-label="Grow N Work">
+            <RouterLink to="/" className="text-3xl font-extrabold" aria-label="Grow N Work">
               <span className="text-black">Icon</span>{" "}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">
                 Tech Institutes
-              </span>{" "}
-            </a>
+              </span>
+            </RouterLink>
           </div>
 
           <button
@@ -55,13 +51,7 @@ const Navbar = () => {
             aria-controls="main-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 h-6 text-gray-700"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-gray-700">
               {menuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -77,21 +67,18 @@ const Navbar = () => {
             } md:block transition-all duration-300 ease-in-out`}
           >
             <ul className="flex flex-col md:flex-row items-start md:items-center justify-center md:justify-center space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
-              {/* Home Link - Always Visible */}
               <li>
-                <RouterLink
-                  to="/"
+                <button
+                  onClick={handleHomeClick}
                   className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
                     activeLink === "home" ? "text-blue-500 font-bold" : ""
                   }`}
-                  onClick={() => handleSetActive("home")}
-                  aria-label="Go to Home page"
+                  aria-label="Go to Home section"
                 >
                   Home
-                </RouterLink>
+                </button>
               </li>
 
-              {/* Hide all links except Blog when on /blogdetails or /blog/:id */}
               {!isBlogDetailPage && !isCoursePage && (
                 <>
                   <li>
@@ -104,7 +91,7 @@ const Navbar = () => {
                       className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
                         activeLink === "courses" ? "text-blue-500 font-bold" : ""
                       }`}
-                      onClick={() => handleSetActive("courses")}
+                      onClick={() => handleNavigation("courses", true)}
                       aria-label="Go to Courses section"
                     >
                       Courses
@@ -120,7 +107,7 @@ const Navbar = () => {
                       className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
                         activeLink === "about" ? "text-blue-500 font-bold" : ""
                       }`}
-                      onClick={() => handleSetActive("about")}
+                      onClick={() => handleNavigation("about", true)}
                       aria-label="Go to About Us section"
                     >
                       About Us
@@ -136,7 +123,7 @@ const Navbar = () => {
                       className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
                         activeLink === "contact" ? "text-blue-500 font-bold" : ""
                       }`}
-                      onClick={() => handleSetActive("contact")}
+                      onClick={() => handleNavigation("contact", true)}
                       aria-label="Go to Contact Us section"
                     >
                       Contact Us
@@ -145,14 +132,13 @@ const Navbar = () => {
                 </>
               )}
 
-              {/* Blog Link - Always Visible */}
               <li>
                 <RouterLink
                   to="/blogdetails"
                   className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
                     activeLink === "blog" ? "text-blue-500 font-bold" : ""
                   }`}
-                  onClick={() => handleSetActive("blog")}
+                  onClick={() => handleNavigation("blog", false)}
                   aria-label="Go to Blog page"
                 >
                   Blog
