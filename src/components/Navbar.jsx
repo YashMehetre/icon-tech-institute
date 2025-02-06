@@ -31,7 +31,7 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
-  const isBlogDetailPage = location.pathname === "/blogdetails";
+  const isBlogDetailPage = /^\/blog\//.test(location.pathname) || location.pathname === "/blogdetails";
   const isHomePage = location.pathname === "/";
   const isCoursePage = location.pathname.includes("/course/");
 
@@ -41,8 +41,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
             <a href="/" className="text-3xl font-extrabold" aria-label="Grow N Work">
-              <span className="text-black">Data</span>{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">Mentor</span>{" "}
+              <span className="text-black">Icon</span>{" "}
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">
+                Tech Institutes
+              </span>{" "}
             </a>
           </div>
 
@@ -61,50 +63,35 @@ const Navbar = () => {
               className="w-6 h-6 text-gray-700"
             >
               {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
 
           <div
             id="main-menu"
-            className={`absolute md:relative top-16 md:top-auto left-0 md:left-auto w-full md:w-auto bg-white md:bg-transparent ${menuOpen ? "block" : "hidden"} md:block transition-all duration-300 ease-in-out`}
+            className={`absolute md:relative top-16 md:top-auto left-0 md:left-auto w-full md:w-auto bg-white md:bg-transparent ${
+              menuOpen ? "block" : "hidden"
+            } md:block transition-all duration-300 ease-in-out`}
           >
             <ul className="flex flex-col md:flex-row items-start md:items-center justify-center md:justify-center space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
+              {/* Home Link - Always Visible */}
               <li>
-                {isBlogDetailPage ? (
-                  <RouterLink
-                    to="/"
-                    className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "home" ? "text-blue-500 font-bold" : ""}`}
-                    onClick={() => handleSetActive("home")}
-                    aria-label="Go to Home page"
-                  >
-                    Home
-                  </RouterLink>
-                ) : (
-                  
-                  <RouterLink
-                    to="/"
-                    className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "home" ? "text-blue-500 font-bold" : ""}`}
-                    onClick={() => handleSetActive("home")}
-                    aria-label="Go to Home page"
-                  >
-                    Home
-                  </RouterLink>
-                )}
+                <RouterLink
+                  to="/"
+                  className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
+                    activeLink === "home" ? "text-blue-500 font-bold" : ""
+                  }`}
+                  onClick={() => handleSetActive("home")}
+                  aria-label="Go to Home page"
+                >
+                  Home
+                </RouterLink>
               </li>
+
+              {/* Hide all links except Blog when on /blogdetails or /blog/:id */}
               {!isBlogDetailPage && !isCoursePage && (
                 <>
                   <li>
@@ -114,7 +101,9 @@ const Navbar = () => {
                       duration={500}
                       spy={true}
                       offset={-80}
-                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "courses" ? "text-blue-500 font-bold" : ""}`}
+                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
+                        activeLink === "courses" ? "text-blue-500 font-bold" : ""
+                      }`}
                       onClick={() => handleSetActive("courses")}
                       aria-label="Go to Courses section"
                     >
@@ -128,7 +117,9 @@ const Navbar = () => {
                       duration={500}
                       spy={true}
                       offset={-80}
-                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "about" ? "text-blue-500 font-bold" : ""}`}
+                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
+                        activeLink === "about" ? "text-blue-500 font-bold" : ""
+                      }`}
                       onClick={() => handleSetActive("about")}
                       aria-label="Go to About Us section"
                     >
@@ -142,7 +133,9 @@ const Navbar = () => {
                       duration={500}
                       spy={true}
                       offset={-80}
-                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "contact" ? "text-blue-500 font-bold" : ""}`}
+                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
+                        activeLink === "contact" ? "text-blue-500 font-bold" : ""
+                      }`}
                       onClick={() => handleSetActive("contact")}
                       aria-label="Go to Contact Us section"
                     >
@@ -152,11 +145,13 @@ const Navbar = () => {
                 </>
               )}
 
-            
+              {/* Blog Link - Always Visible */}
               <li>
                 <RouterLink
                   to="/blogdetails"
-                  className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${activeLink === "blog" ? "text-blue-500 font-bold" : ""}`}
+                  className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
+                    activeLink === "blog" ? "text-blue-500 font-bold" : ""
+                  }`}
                   onClick={() => handleSetActive("blog")}
                   aria-label="Go to Blog page"
                 >

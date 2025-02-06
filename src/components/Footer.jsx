@@ -12,8 +12,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold transition-colors duration-500 hover:text-blue-400 text-left ml-4">
-            <span className="text-white">Data</span>
-            <span className="text-blue-500"> Mentor</span>
+            <span className="text-white">Icon</span>
+            <span className="text-blue-500">Tech Institutes</span>
           </h1>
         </div>
 

@@ -19,12 +19,12 @@ const courses = [
   },
   {
     id: 2,
-    title: "Google Cloud Platform",
+    title: "SnowFlake SQL",
     description:
-      "Master the Google Cloud Platform with our comprehensive training. Learn to deploy, manage, and scale applications with ease.",
+      "Master Snowflake SQL and unlock the power of cloud-based data warehousing! 🚀 Learn how to efficiently query, transform, and analyze massive datasets using Snowflake’s scalable architecture.",
     image: gcp,
     category: "Our Courses",
-    info: " Learn Google Cloud Platform (GCP) easily with our special training in Pune. Our experienced teachers will guide you step by step, and you’ll get hands-on practice to become really good at GCP. Plus, you can earn an important certification.Our training covers everything you need to know about GCP, even if you’re just starting. You’ll learn about computers, storage, databases, the internet, and how to keep things safe. This knowledge will open up lots of job opportunities because many companies need people who are good at GCP."
+    info: "Snowflake SQL is the query language used in Snowflake, a cloud-based data warehousing platform. It supports standard SQL with additional features for scalability, performance, and security. Snowflake operates on a pay-as-you-go model, automatically scaling compute resources and separating storage from compute, making it efficient for handling large datasets. It supports semi-structured data (JSON, Parquet, Avro), automatic optimization, and zero-copy cloning, making it a powerful choice for modern data analytics. 🚀"
   },
   {
     id: 3,
@@ -64,12 +64,12 @@ const courses = [
   },
   {
     id: 7,
-    title: "Google Cloud Platform",
+    title: "SnowFlake SQL",
     description:
-      "Master the Google Cloud Platform with our comprehensive training. Learn to deploy, manage, and scale applications.",
+      "Master Snowflake SQL and unlock the power of cloud-based data warehousing! 🚀 Learn how to efficiently query, transform, and analyze massive datasets using Snowflake’s scalable architecture.",
     image: gcp,
     category: "Trending Courses",
-    info: "Step into the future of cloud computing with our Google Cloud Platform Training in Pune. Our easy-to-follow courses are perfect for everyone, from beginners to those with some experience. Enjoy hands-on practice, expert advice, and earn a certification that’s recognized in the industry. Improve your cloud knowledge and open new career opportunities. Join us at The Tools in Pune to start your GCP journey today!"
+    info: "Snowflake SQL is the query language used in Snowflake, a cloud-based data warehousing platform. It supports standard SQL with additional features for scalability, performance, and security. Snowflake operates on a pay-as-you-go model, automatically scaling compute resources and separating storage from compute, making it efficient for handling large datasets. It supports semi-structured data (JSON, Parquet, Avro), automatic optimization, and zero-copy cloning, making it a powerful choice for modern data analytics. 🚀"
   },
   {
     id: 8,
