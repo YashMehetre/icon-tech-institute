@@ -73,7 +73,7 @@ const Footer = () => {
 
         <div className="mt-8 border-t border-gray-700 pt-4 text-center">
           <p className="text-sm">
-            ©{new Date().getFullYear()} Icon Tech Institutes All Rights Reserved
+            ©{new Date().getFullYear()} IconTech Institutes All Rights Reserved
           </p>
         </div>
       </div>
