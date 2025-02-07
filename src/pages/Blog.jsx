@@ -16,7 +16,6 @@ function Blog() {
 
   return (
     <div className="container mx-auto py-16 px-6">
-      {/* Blog Content Section */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-12 mt-10">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2">
@@ -33,8 +32,6 @@ function Blog() {
           </div>
         </div>
       </div>
-
-      {/* Insights Section */}
       <div className="mt-12 bg-gray-50 rounded-lg p-8 shadow-lg">
         <h2 className="text-3xl font-semibold text-gray-800 mb-6">Key Insights</h2>
         <ul className="list-disc pl-6 space-y-2 text-lg text-gray-600">
@@ -43,8 +40,6 @@ function Blog() {
           <li>Emerging technologies transforming data processing.</li>
         </ul>
       </div>
-
-      {/* Practical Tips Section */}
       <div className="mt-12 bg-gray-50 rounded-lg p-8 shadow-lg">
         <h2 className="text-3xl font-semibold text-gray-800 mb-6">Practical Tips</h2>
         <p className="text-lg text-gray-600 mb-4">
@@ -56,8 +51,6 @@ function Blog() {
           <li>Regularly audit and clean data to ensure accuracy.</li>
         </ul>
       </div>
-
-      {/* About the Author Section */}
       <div className="mt-12 bg-gray-100 p-8 rounded-lg shadow-md">
         <h2 className="text-3xl font-semibold text-gray-800 mb-4">About the Author</h2>
         <div className="flex items-center space-x-6">

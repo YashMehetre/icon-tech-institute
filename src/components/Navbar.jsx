@@ -22,9 +22,9 @@ const Navbar = () => {
 
   const handleHomeClick = () => {
     if (location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top on the same page
     } else {
-      navigate("/");
+      navigate("/"); // Navigate to the homepage if on a different page
     }
   };
 
@@ -32,11 +32,16 @@ const Navbar = () => {
   const isCoursePage = location.pathname.includes("/course/");
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md py-4 z-50">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md py-6 z-50">
       <nav className="container mx-auto px-4" aria-label="Main navigation" role="navigation">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <RouterLink to="/" className="text-3xl font-extrabold" aria-label="Grow N Work">
+            <RouterLink
+              to="/"
+              className="text-3xl font-extrabold ml-6"  // Added left margin here
+              aria-label="Grow N Work"
+              onClick={handleHomeClick} // Ensure it calls handleHomeClick
+            >
               <span className="text-black">Icon</span>{" "}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">
                 Tech Institutes
@@ -70,9 +75,7 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={handleHomeClick}
-                  className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
-                    activeLink === "home" ? "text-blue-500 font-bold" : ""
-                  }`}
+                  className="block text-xl text-gray-700 hover:text-blue-800 hover:underline transition duration-300 cursor-pointer"
                   aria-label="Go to Home section"
                 >
                   Home
@@ -88,9 +91,7 @@ const Navbar = () => {
                       duration={500}
                       spy={true}
                       offset={-80}
-                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
-                        activeLink === "courses" ? "text-blue-500 font-bold" : ""
-                      }`}
+                      className="block text-xl text-gray-700 hover:text-blue-800 hover:underline transition duration-300 cursor-pointer"
                       onClick={() => handleNavigation("courses", true)}
                       aria-label="Go to Courses section"
                     >
@@ -104,9 +105,7 @@ const Navbar = () => {
                       duration={500}
                       spy={true}
                       offset={-80}
-                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
-                        activeLink === "about" ? "text-blue-500 font-bold" : ""
-                      }`}
+                      className="block text-xl text-gray-700 hover:text-blue-800 hover:underline transition duration-300 cursor-pointer"
                       onClick={() => handleNavigation("about", true)}
                       aria-label="Go to About Us section"
                     >
@@ -120,9 +119,7 @@ const Navbar = () => {
                       duration={500}
                       spy={true}
                       offset={-80}
-                      className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
-                        activeLink === "contact" ? "text-blue-500 font-bold" : ""
-                      }`}
+                      className="block text-xl text-gray-700 hover:text-blue-800 hover:underline transition duration-300 cursor-pointer"
                       onClick={() => handleNavigation("contact", true)}
                       aria-label="Go to Contact Us section"
                     >
@@ -135,9 +132,7 @@ const Navbar = () => {
               <li>
                 <RouterLink
                   to="/blogdetails"
-                  className={`block text-lg text-gray-700 hover:text-blue-500 transition duration-300 cursor-pointer ${
-                    activeLink === "blog" ? "text-blue-500 font-bold" : ""
-                  }`}
+                  className="block text-xl text-gray-700 hover:text-blue-800 hover:underline transition duration-300 cursor-pointer"
                   onClick={() => handleNavigation("blog", false)}
                   aria-label="Go to Blog page"
                 >

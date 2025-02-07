@@ -5,16 +5,21 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
+import logo from "../assets/IconTech.png"; 
 
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold transition-colors duration-500 hover:text-blue-400 text-left ml-4">
-            <span className="text-white">Icon</span>
-            <span className="text-blue-500">Tech Institutes</span>
-          </h1>
+          {/* Logo Section */}
+          <div className="flex-shrink-0 ml-4">
+            <img
+              src={logo}
+              alt="Tech Institutes Logo"
+              className="h-20 w-auto object-contain"
+            />
+          </div>
         </div>
 
         <div className="flex flex-wrap justify-between ml-4">
@@ -42,49 +47,24 @@ const Footer = () => {
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">Reach Us</h3>
             <p>Infront Of Agrawal Hospital</p>
-            <p>Chandan Nagar </p>
+            <p>Chandan Nagar</p>
             <p>Pune</p>
 
             <h3 className="text-lg font-semibold mt-4 mb-2">Social Handles</h3>
             <div className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
-              >
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <FaFacebookF size={24} />
               </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
-              >
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <FaLinkedinIn size={24} />
               </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
-              >
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <FaInstagram size={24} />
               </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
-              >
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <FaTwitter size={24} />
               </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
-              >
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <FaYoutube size={24} />
               </a>
             </div>

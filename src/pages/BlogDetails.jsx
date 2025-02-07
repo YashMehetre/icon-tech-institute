@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { FiCalendar, FiUser } from "react-icons/fi";
 
-// Dummy Blog Data with Copyright-Free Images from Unsplash
 const blogs = [
   {
     title: "The Ultimate Guide to Power BI",
