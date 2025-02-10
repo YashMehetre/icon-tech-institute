@@ -44,7 +44,7 @@ const Navbar = () => {
             >
               <span className="text-black">Icon</span>{" "}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">
-                Tech Institutes
+                Tech Institute
               </span>
             </RouterLink>
           </div>
