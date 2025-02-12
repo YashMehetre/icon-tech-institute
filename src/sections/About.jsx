@@ -10,7 +10,7 @@ const About = () => {
             About Us
           </h2>
           <p className="text-lg text-gray-600 mb-4 text-center md:text-left">
-            At <span className="text-black font-semibold">Data</span> <span className="text-blue-600 font-semibold">Mentor</span>, we are dedicated to shaping the future of data professionals by providing industry-leading courses in Power BI, Data Analytics, and Data Management.
+            At <span className="text-black font-semibold">Icon</span> <span className="text-blue-600 font-semibold">Tech</span>, we are dedicated to shaping the future of data professionals by providing industry-leading courses in Power BI, Data Analytics, and Data Management.
           </p>
           <p className="font-semibold text-gray-900 mb-6 text-center md:text-left">
             Our mission is to equip professionals with the tools, techniques, and expertise needed to excel in the ever-evolving data landscape.

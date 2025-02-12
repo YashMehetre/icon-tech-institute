@@ -5,7 +5,7 @@ import sql from "../assets/Courses/new.jpg";
 import da from "../assets/Courses/DA.jpg";
 import ms from "../assets/Courses/ms.jpg";
 import python from "../assets/Courses/python1.jpg";
-import automate from "../assets/Courses/automate.jpg";
+import automate from "../assets/Courses/Automate.jpg";
 
 const courses = [
   {
