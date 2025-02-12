@@ -19,7 +19,7 @@ const About = () => {
             Our courses focus on real-world applications and hands-on learning, ensuring that each student is prepared to tackle the challenges of data-driven industries.
           </p>
           <p className="text-gray-600 mb-6 text-center md:text-left">
-            Learn more about how we can help you grow your data skills at <a href="#" className="text-blue-600 underline">Data Mentor</a>.
+            Learn more about how we can help you grow your data skills at <a href="#" className="text-blue-600 underline">Icon Tech</a>.
           </p>
         </div>
 
