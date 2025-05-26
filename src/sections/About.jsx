@@ -28,31 +28,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="container mx-auto mt-16 bg-blue-50 p-8 rounded-lg shadow-lg">
-        <div className="flex justify-between flex-wrap text-center">
-          <div className="w-full sm:w-1/3 mb-6">
-            <h3 className="text-3xl font-bold text-orange-500">01</h3>
-            <h4 className="text-xl font-semibold text-gray-900 mt-2">Power BI Mastery</h4>
-            <p className="text-gray-600 mt-2">
-              Learn to visualize and analyze data using Power BI, transforming raw information into actionable insights.
-            </p>
-          </div>
-          <div className="w-full sm:w-1/3 mb-6">
-            <h3 className="text-3xl font-bold text-orange-500">02</h3>
-            <h4 className="text-xl font-semibold text-gray-900 mt-2">Data Analytics</h4>
-            <p className="text-gray-600 mt-2">
-              Dive deep into data analysis techniques, including data mining, predictive analytics, and statistical modeling to drive business decisions.
-            </p>
-          </div>
-          <div className="w-full sm:w-1/3 mb-6">
-            <h3 className="text-3xl font-bold text-orange-500">03</h3>
-            <h4 className="text-xl font-semibold text-gray-900 mt-2">Data Management</h4>
-            <p className="text-gray-600 mt-2">
-              Understand the importance of data governance, quality assurance, and database management in ensuring data integrity and accessibility.
-            </p>
-          </div>
-        </div>
-      </div>
+     
     </div>
   );
 };

@@ -14,6 +14,7 @@ import PhoneCallButton from "./components/PhoneCallButton";
 import WhatsAppButton from "./components/WhatsAppButton";
 import BlogCardSlider from "./sections/BlogCardSlider";
 import BlogDetails from "./pages/BlogDetails";
+import FloatingSocials from "./components/FloatingSocials";
 const App = () => {
   return (
     <div>
@@ -38,8 +39,9 @@ const App = () => {
         <Route path="/blogdetails" element={<BlogDetails />} /> 
       </Routes>
       <Footer /> 
-      <PhoneCallButton />  
-      <WhatsAppButton />
+      {/* <PhoneCallButton />  
+      <WhatsAppButton /> */}
+      <FloatingSocials/>
     </div>
   );
 };

@@ -1,29 +1,26 @@
 import {
   FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
   FaInstagram,
-  FaYoutube,
 } from "react-icons/fa";
-import logo from "../assets/IconTech.png"; 
+import logo from "../assets/IconTech.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center mb-8">
+    <footer className="bg-black text-white py-10">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo Section */}
-          <div className="flex-shrink-0 ml-4">
+          <div className="flex flex-col justify-start">
             <img
               src={logo}
               alt="Tech Institutes Logo"
-              className="h-20 w-auto object-contain"
+              className="h-28 w-auto object-contain"
             />
           </div>
-        </div>
 
-        <div className="flex flex-wrap justify-between ml-4">
-          <div className="w-full md:w-1/4 mb-8 md:mb-0">
+          {/* Course Domains */}
+          <div>
             <h3 className="text-lg font-semibold mb-4">Course Domains</h3>
             <ul className="space-y-2">
               <li>Data Analytics</li>
@@ -34,46 +31,57 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="w-full md:w-1/4 mb-8 md:mb-0">
+          {/* Quick Links */}
+          <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#courses">Courses</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#home" className="hover:underline">Home</a></li>
+              <li><a href="#about" className="hover:underline">About</a></li>
+              <li><a href="#courses" className="hover:underline">Courses</a></li>
+              <li><a href="#contact" className="hover:underline">Contact Us</a></li>
             </ul>
           </div>
 
-          <div className="w-full md:w-1/4 mb-8 md:mb-0">
+          {/* Reach Us + Socials */}
+          <div>
             <h3 className="text-lg font-semibold mb-4">Reach Us</h3>
-            <p>Infront Of Agrawal Hospital</p>
-            <p>Chandan Nagar</p>
-            <p>Pune</p>
+            {/* <p>Sangarsh Chowk, Kharadi</p>
+            <p>Chandan Nagar, Wadgaon Sheri</p>
+            <p>Pune, Maharashtra 411014, India</p> */}
 
+            {/* Embedded Google Map */}
+            <div className="mt-4 rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                title="Google Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.093650689262!2d73.93065407519941!3d18.569061882542846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1b2b4d22d67%3A0xa3f5c2f0d69cc274!2sSangarsh%20Chowk%2C%20Kharadi%2C%20Pune%2C%20Maharashtra%20411014!5e0!3m2!1sen!2sin!4v1716734343877!5m2!1sen!2sin"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            {/* Socials */}
             <h3 className="text-lg font-semibold mt-4 mb-2">Social Handles</h3>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mt-2">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
-                <FaFacebookF size={24} />
+                <FaFacebookF size={20} />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
-                <FaLinkedinIn size={24} />
+                <FaLinkedinIn size={20} />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
-                <FaInstagram size={24} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
-                <FaTwitter size={24} />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
-                <FaYoutube size={24} />
+                <FaInstagram size={20} />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-gray-700 pt-4 text-center">
+        <div className="mt-10 border-t border-gray-700 pt-4 text-center">
           <p className="text-sm">
-            ©{new Date().getFullYear()} Icon Tech Institutes All Rights Reserved
+            ©{new Date().getFullYear()} Icon Tech Institutes. All Rights Reserved.
           </p>
         </div>
       </div>

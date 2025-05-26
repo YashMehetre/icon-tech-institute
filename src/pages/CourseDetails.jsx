@@ -86,26 +86,29 @@ const CourseDetails = () => {
         </div>
 
         <div className="mt-12 bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Courses Available in Multiple Languages</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "English", description: "Comprehensive courses in English.", icon: "EN" },
-              { title: "Hindi", description: "Learn in Hindi for better understanding.", icon: "मै" },
-              { title: "Marathi", description: "Courses tailored for Marathi speakers.", icon: "अ" },
-              { title: "Tamil", description: "Courses in Tamil for local learners.", icon: "तमिळ" },
-              { title: "Gujarati", description: "Interactive courses in Gujarati.", icon: "गुजराती" },
-            ].map((language, index) => (
-              <div
-                key={index}
-                className="bg-gray-100 p-6 rounded-lg shadow-md text-center transform transition-transform duration-300 hover:scale-105 hover:bg-blue-50 cursor-pointer"
-              >
-                <div className="text-4xl mb-4">{language.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{language.title}</h3>
-                <p className="text-gray-600 text-sm">{language.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+  <h2 className="text-3xl font-bold text-gray-800 mb-6">
+    Courses Available in Multiple Languages
+  </h2>
+  <div className="flex flex-wrap gap-6 justify-center">
+    {[
+      { title: "English", description: "Comprehensive courses in English.", icon: "EN" },
+      { title: "Hindi", description: "Learn in Hindi for better understanding.", icon: "मै" },
+      { title: "Marathi", description: "Courses tailored for Marathi speakers.", icon: "अ" },
+      { title: "Tamil", description: "Courses in Tamil for local learners.", icon: "तमिळ" },
+      { title: "Gujarati", description: "Interactive courses in Gujarati.", icon: "गुजराती" },
+    ].map((language, index) => (
+      <div
+        key={index}
+        className="w-full sm:w-[45%] md:w-[30%] lg:w-[18%] bg-gray-100 p-6 rounded-lg shadow-md text-center transform transition-transform duration-300 hover:scale-105 hover:bg-blue-50 cursor-pointer"
+      >
+        <div className="text-4xl mb-4">{language.icon}</div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">{language.title}</h3>
+        <p className="text-gray-600 text-sm">{language.description}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         <div className="mt-12 bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Course Curriculum</h2>
