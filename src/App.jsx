@@ -15,6 +15,8 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import BlogCardSlider from "./sections/BlogCardSlider";
 import BlogDetails from "./pages/BlogDetails";
 import FloatingSocials from "./components/FloatingSocials";
+import CoursesPage from "./pages/CoursesPage";
+import CourseDetail from "./pages/CourseDetail";
 const App = () => {
   return (
     <div>
@@ -29,6 +31,7 @@ const App = () => {
               <section id="about"><About /></section>
               <BlogCardSlider/>
               <section id="contact"><Contact /></section>
+              
               <PopupForm />
               <ScrollToTop />
             </>
@@ -37,6 +40,8 @@ const App = () => {
          <Route path="/blog/:id" element={<Blog />} /> 
         <Route path="/course/:id" element={<CourseDetails />} /> 
         <Route path="/blogdetails" element={<BlogDetails />} /> 
+        <Route path="/courses" element={<CoursesPage />} />
+        <Route path="/course/:id" element={<CourseDetail />} />
       </Routes>
       <Footer /> 
       {/* <PhoneCallButton />  

@@ -5,11 +5,16 @@ import { useState, useEffect } from "react";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("");
+  const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const toggleCoursesDropdown = () => {
+    setIsCoursesDropdownOpen(!isCoursesDropdownOpen);
   };
 
   const handleNavigation = (link, isSection) => {
@@ -20,11 +25,21 @@ const Navbar = () => {
     navigate("/", { replace: true });
   };
 
+// Navbar.js
+const handleCourseCategoryClick = (category) => {
+  navigate("/courses", { 
+    state: { filterCategory: category },
+    replace: true 
+  });
+  setMenuOpen(false);
+  setIsCoursesDropdownOpen(false);
+};
+
   const handleHomeClick = () => {
     if (location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top on the same page
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      navigate("/"); // Navigate to the homepage if on a different page
+      navigate("/");
     }
   };
 
@@ -38,9 +53,9 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <RouterLink
               to="/"
-              className="text-3xl font-extrabold ml-6"  // Added left margin here
+              className="text-3xl font-extrabold ml-6"
               aria-label="Grow N Work"
-              onClick={handleHomeClick} // Ensure it calls handleHomeClick
+              onClick={handleHomeClick}
             >
               <span className="text-black">Icon</span>{" "}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">
@@ -84,20 +99,57 @@ const Navbar = () => {
 
               {!isBlogDetailPage && !isCoursePage && (
                 <>
-                  <li>
-                    <Link
-                      to="courses"
-                      smooth={true}
-                      duration={500}
-                      spy={true}
-                      offset={-80}
-                      className="block text-xl text-gray-700 hover:text-blue-800 hover:underline transition duration-300 cursor-pointer"
-                      onClick={() => handleNavigation("courses", true)}
-                      aria-label="Go to Courses section"
+                  <li className="relative group">
+                    <button
+                      onClick={toggleCoursesDropdown}
+                      className="flex items-center text-xl text-gray-700 hover:text-blue-800 transition duration-300 cursor-pointer"
+                      aria-expanded={isCoursesDropdownOpen}
+                      aria-label="Courses dropdown"
                     >
-                      Courses
-                    </Link>
+                      All Courses
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`ml-1 h-5 w-5 transition-transform duration-200 ${
+                          isCoursesDropdownOpen ? "transform rotate-180" : ""
+                        }`}
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      className={`${
+                        isCoursesDropdownOpen ? "block" : "hidden"
+                      } md:absolute md:group-hover:block mt-2 md:mt-0 w-48 bg-white rounded-md shadow-lg z-10`}
+                    >
+                      <div className="py-1">
+                        <button
+                          onClick={() => handleCourseCategoryClick("Data Analytics")}
+                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-800"
+                        >
+                          Data Analytics
+                        </button>
+                        <button
+                          onClick={() => handleCourseCategoryClick("Power Platform")}
+                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-800"
+                        >
+                          Power Platform
+                        </button>
+                        <button
+                          onClick={() => handleCourseCategoryClick("Cloud Technologies")}
+                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-800"
+                        >
+                          Cloud Technologies
+                        </button>
+                      </div>
+                    </div>
                   </li>
+
                   <li>
                     <Link
                       to="about"
@@ -147,4 +199,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar; 
