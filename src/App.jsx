@@ -41,7 +41,7 @@ const App = () => {
         <Route path="/course/:id" element={<CourseDetails />} /> 
         <Route path="/blogdetails" element={<BlogDetails />} /> 
         <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/course/:id" element={<CourseDetail />} />
+        <Route path="/courses/:id" element={<CourseDetail />} />
       </Routes>
       <Footer /> 
       {/* <PhoneCallButton />  

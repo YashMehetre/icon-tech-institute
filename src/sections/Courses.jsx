@@ -84,7 +84,7 @@ const Courses = () => {
             <div className="flex justify-center text-orange-500 mb-4">
               <FaChalkboardTeacher size={40} />
             </div>
-            <h3 className="text-xl font-semibold text-gray-800">Training</h3>
+            <h3 className="text-xl font-semibold text-gray-800">AI Training</h3>
             <p className="text-gray-600 mt-2">
               Hands-on learning experiences in Power BI, Data Analytics, and
               modern data tools designed to build industry-ready skills.

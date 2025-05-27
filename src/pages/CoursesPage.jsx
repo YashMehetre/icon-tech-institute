@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import courses from "./coursesData"; // Import your courses data
+import courses from "./allcourse"; // Import your courses data
 
 const CoursesPage = () => {
   const location = useLocation();
@@ -28,16 +28,7 @@ const CoursesPage = () => {
     if (category === "All") {
       setFilteredCourses(courses);
     } else {
-      const filtered = courses.filter((course) => {
-        if (category === "Data Analytics") {
-          return course.title.includes("Data Analytics") || course.title.includes("SQL") || course.title.includes("Python");
-        } else if (category === "Power Platform") {
-          return course.title.includes("Power BI") || course.title.includes("Power Platform") || course.title.includes("Power Automate");
-        } else if (category === "Cloud Technologies") {
-          return course.title.includes("Snowflake") || course.title.includes("GCP") || course.title.includes("Cloud");
-        }
-        return true;
-      });
+      const filtered = courses.filter((course) => course.category === category);
       setFilteredCourses(filtered);
     }
   };
@@ -53,7 +44,7 @@ const CoursesPage = () => {
     <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50" id="courses">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-900 mb-8">Our Courses</h1>
-        
+
         {/* Category Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
@@ -92,7 +83,7 @@ const CoursesPage = () => {
                   </div>
                   <p className="text-gray-600 mb-4">{course.description}</p>
                   <button
-                    onClick={() => navigate(`/course/${course.id}`)}
+                    onClick={() => navigate(`/courses/${course.id}`)}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors"
                   >
                     View Details
