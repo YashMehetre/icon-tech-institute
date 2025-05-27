@@ -26,7 +26,6 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    setIsCoursesDropdownOpen(false); // Close dropdown when toggling menu
   };
 
   const toggleCoursesDropdown = () => {
@@ -121,7 +120,7 @@ const Navbar = () => {
 
               {!isBlogDetailPage && !isCoursePage && (
                 <>
-                  <li className="relative w-full md:w-auto">
+                  <li className="relative group w-full md:w-auto">
                     <button
                       onClick={toggleCoursesDropdown}
                       className="flex items-center justify-between w-full md:w-auto text-lg md:text-xl text-gray-700 hover:text-blue-800 transition duration-300 cursor-pointer py-2 md:py-0"
@@ -147,7 +146,7 @@ const Navbar = () => {
                     <div
                       className={`${
                         isCoursesDropdownOpen ? "block" : "hidden"
-                      } md:absolute mt-2 md:mt-0 w-full md:w-48 bg-white rounded-md shadow-lg md:shadow-xl z-10`}
+                      } md:absolute md:group-hover:block mt-2 md:mt-0 w-full md:w-48 bg-white rounded-md shadow-lg md:shadow-xl z-10`}
                     >
                       <div className="py-1">
                         <button
