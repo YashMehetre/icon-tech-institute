@@ -1,7 +1,7 @@
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+import logo from "../assets/Main.png"
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("");
@@ -25,15 +25,14 @@ const Navbar = () => {
     navigate("/", { replace: true });
   };
 
-// Navbar.js
-const handleCourseCategoryClick = (category) => {
-  navigate("/courses", { 
-    state: { filterCategory: category },
-    replace: true 
-  });
-  setMenuOpen(false);
-  setIsCoursesDropdownOpen(false);
-};
+  const handleCourseCategoryClick = (category) => {
+    navigate("/courses", {
+      state: { filterCategory: category },
+      replace: true,
+    });
+    setMenuOpen(false);
+    setIsCoursesDropdownOpen(false);
+  };
 
   const handleHomeClick = () => {
     if (location.pathname === "/") {
@@ -50,13 +49,18 @@ const handleCourseCategoryClick = (category) => {
     <header className="fixed top-0 left-0 w-full bg-white shadow-md py-6 z-50">
       <nav className="container mx-auto px-4" aria-label="Main navigation" role="navigation">
         <div className="flex justify-between items-center">
-          <div className="flex-shrink-0">
+          <div className="flex items-center space-x-2 ml-6">
             <RouterLink
               to="/"
-              className="text-3xl font-extrabold ml-6"
+              className="flex items-center text-3xl font-extrabold"
               aria-label="Grow N Work"
               onClick={handleHomeClick}
             >
+              <img
+                src={logo} // Replace with actual logo path
+                alt="Company Logo"
+                className="h-10 w-10 object-contain mr-2"
+              />
               <span className="text-black">Icon</span>{" "}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text animate-type">
                 Tech Institute
@@ -199,4 +203,4 @@ const handleCourseCategoryClick = (category) => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

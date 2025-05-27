@@ -95,9 +95,9 @@ const Contact = () => {
           <p className="text-gray-700 mb-6">
             Email, call, or complete the form to learn how Snappy can solve your messaging problem.
           </p>
-          <p className="text-gray-800 font-semibold">info@snappy.io</p>
-          <p className="text-gray-800 font-semibold mb-6">321-221-231</p>
-          <a href="#" className="text-blue-600 font-semibold">Customer Support</a>
+          <p className="text-gray-800 font-semibold">icontechinstitute1@gmail.com</p>
+          <p className="text-gray-800 font-semibold mb-6">+91 7744993282</p>
+
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer">
               <h3 className="text-lg font-semibold text-gray-900">Customer Support</h3>
