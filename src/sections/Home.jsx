@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import logo from "../assets/IconTech.png";
 
 const Home = () => {
@@ -43,15 +44,13 @@ const Home = () => {
               expert-led courses and real-world applications.
             </p>
             <div className="flex justify-center lg:justify-start">
-              <Link
-                to="courses"
-                smooth={true}
-                duration={500}
+              <RouterLink
+                to="/courses"
                 className="bg-white text-black px-8 py-4 text-lg rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 cursor-pointer transform hover:scale-105"
                 aria-label="Explore Courses"
               >
                 Explore Courses
-              </Link>
+              </RouterLink>
             </div>
           </div>
           <div className="lg:w-1/2 flex justify-center p-6">
