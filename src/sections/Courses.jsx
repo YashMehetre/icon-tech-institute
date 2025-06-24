@@ -1,72 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import courses from "../pages/coursesData";
-import placement from "../pages/placement";
 import { FaChalkboardTeacher, FaBrain, FaUsersCog } from "react-icons/fa";
 
 const Courses = () => {
   const categories = ["Trending Courses"];
-  const [expandedReviewId, setExpandedReviewId] = useState(null);
-
-  const toggleReview = (id) => {
-    setExpandedReviewId(expandedReviewId === id ? null : id);
-  };
 
   return (
-   <div className="bg-gradient-to-tr from-slate-900 via-gray-900 to-slate-800 min-h-screen py-16 px-6">
-
-      {/* Placement Cards Section */}
-      <div>
-        <h2 className="text-4xl font-bold text-center mb-6 text-white">
-          Placement Highlights
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4 mb-16">
-          {placement.map((person) => (
-            <div
-              key={person.id}
-              className={`w-full mx-auto bg-gray-100 text-black p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-all duration-300 transform ${
-                expandedReviewId === person.id ? "min-h-[450px]" : "min-h-[400px]"
-              }`}
-            >
-              <div className="w-full h-48 mb-3 overflow-hidden rounded-lg flex items-center justify-center bg-gray-200">
-                <img
-                  src={person.img}
-                  alt={person.name}
-                  className="w-full h-full object-cover object-center rounded-lg"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://via.placeholder.com/300x400?text=No+Image";
-                  }}
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-center">
-                {person.name}
-              </h3>
-              <p className="text-sm text-indigo-600 text-center font-medium my-1">
-                {person.designation}
-              </p>
-              <div className="mt-2">
-                <div
-                  className={`text-sm text-gray-700 text-center italic ${
-                    expandedReviewId !== person.id ? 'line-clamp-2' : ''
-                  }`}
-                >
-                  "{person.review}"
-                </div>
-                {person.review.length > 60 && (
-                  <button
-                    onClick={() => toggleReview(person.id)}
-                    className="text-indigo-600 text-xs font-medium mt-2 block mx-auto hover:underline"
-                  >
-                    {expandedReviewId === person.id ? 'Read Less' : 'Read More'}
-                  </button>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
+    <div className="bg-gradient-to-tr from-slate-900 via-gray-900 to-slate-800 min-h-screen py-16 px-6">
       {/* Trending Courses Section */}
       {categories.map((category) => (
         <div key={category}>
