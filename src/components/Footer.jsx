@@ -7,7 +7,7 @@ import logo from "../assets/IconTech.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10">
+    <footer className="bg-gradient-to-tr from-slate-900 via-gray-900 to-slate-800 text-white py-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo Section */}
@@ -21,8 +21,8 @@ const Footer = () => {
 
           {/* Course Domains */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Course Domains</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold mb-4 text-cyan-400">Course Domains</h3>
+            <ul className="space-y-2 text-gray-300">
               <li>Data Analytics</li>
               <li>Microsoft Power BI</li>
               <li>Google Cloud Platform</li>
@@ -33,8 +33,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold mb-4 text-cyan-400">Quick Links</h3>
+            <ul className="space-y-2 text-gray-300">
               <li><a href="#home" className="hover:underline">Home</a></li>
               <li><a href="#about" className="hover:underline">About</a></li>
               <li><a href="#courses" className="hover:underline">Courses</a></li>
@@ -44,10 +44,7 @@ const Footer = () => {
 
           {/* Reach Us + Socials */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Reach Us</h3>
-            {/* <p>Sangarsh Chowk, Kharadi</p>
-            <p>Chandan Nagar, Wadgaon Sheri</p>
-            <p>Pune, Maharashtra 411014, India</p> */}
+            <h3 className="text-lg font-semibold mb-4 text-cyan-400">Reach Us</h3>
 
             {/* Embedded Google Map */}
             <div className="mt-4 rounded-lg overflow-hidden shadow-lg">
@@ -64,7 +61,7 @@ const Footer = () => {
             </div>
 
             {/* Socials */}
-            <h3 className="text-lg font-semibold mt-4 mb-2">Social Handles</h3>
+            <h3 className="text-lg font-semibold mt-4 mb-2 text-cyan-400">Social Handles</h3>
             <div className="flex space-x-4 mt-2">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <FaFacebookF size={20} />
@@ -80,7 +77,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 border-t border-gray-700 pt-4 text-center">
-          <p className="text-sm">
+          <p className="text-sm text-gray-400">
             ©{new Date().getFullYear()} Icon Tech Institutes. All Rights Reserved.
           </p>
         </div>
