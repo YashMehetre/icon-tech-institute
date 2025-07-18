@@ -51,10 +51,10 @@ const PopupForm = () => {
 
     emailjs
       .send(
-        "service_z0ygob6",
-        "template_4ja3k0y",
+        "service_f2wgzzo",
+        "template_cgbch76",
         templateParams,
-        "rksfd0TNUUD9ourEs"
+        "c3P8PR2VhYO4UES2j"
       )
       .then(
         (response) => {
